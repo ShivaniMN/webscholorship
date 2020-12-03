@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coorg</title>
+<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Open+Sans&family=Righteous&family=Turret+Road:wght@700&family=Ultra&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  height: 700px;
+  text-align: left;
+  background: #1abc9c;
+  color: white;
+  background-image: url(https://pix10.agoda.net/geo/city/17273/1_17273_02.jpg?s=1920x822);
+  background-size: 100%;
+  background-blend-mode: center;
+  font-family: Righteous;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+.alert {
+  padding: 5px;
+  background-color: #f59542;
+  color: white;
+  font-family: Open Sans;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+.container {
+  position: relative;
+  /*width: 50%;
+  max-width: 300px;*/
+}
+
+.image {
+  display: block;
+  /*width: 100%;
+  height: auto;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 77%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.container:hover .overlay {
+  opacity: 1; 
+}
+
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  color: orange;
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!--<h1>ULTISMART</h1>
+    <h2>INFOTECH</h2>
+  <h3>MYSORE</h3>
+  <h4>TOURISM</h4>
+  <h5>MYSORE PALACE</h5>-->
+  <h1 style="font-size: 90px;">COORG</h1>
+  <p style="font-size: 45px;"><b>The Scotland of India</b></p>
+  
+  <!--<p>A <b>responsive</b> web app created by NIE & VVCE ISE.</p>-->
+</div>
+
+<!--<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Link</a>
+</div>-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="feedback1.html">Feedback</a></li>
+      <li><a href="mapscoorg.html">Map</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="sign_in.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login1.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h3>Alert<strong> COVID-19: COORG</strong> is in orange zone</h3>
+  <div><h6>Last update: <strong>1st November 2020</strong></h6></div>   
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Must Places to Visit:</h2><br>
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>01.  </b>Abbey Falls</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--hnhS5oeF--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/938/original/1556178464_shutterstock_572283850.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Abbey Falls is one of the most attractive waterfalls in South India and also one of the best places in Coorg. Falling down from a height of 70 feet in the middle of a panoramic landscape, the tourists are sure to be charmed by the spectacle.</li>
+              <li> It is located 8 km from the Madikeri</li>
+              <li>The visiting Timings of Abbey falls is from 9AM to 5PM. There is a minimal entry fee of Rs. 15 per person to visit the falls and a typical visit to the falls takes 2-3 hours of time.</li>
+              <li>the most suitable time to visit Abbey Falls is from July to October.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>Iruppu Falls</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--V99--8KY--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/942/original/1556179739_shutterstock_1055454140.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Height: 52 m</li>
+              <li>Number of drops: 2</li>
+              <li>Falls is 48 km from Virajpet on the highway to Nagarhole.</li>
+              <li>timings to visit Mullayanagiri: 08:00 am - 5:30 pm.</li>
+              <li> the best time to visit the place is during the monsoon and winter i.e. from August till January.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>03.  </b>raja's seat</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--FwJAe1Xf--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/939/original/1556181169_shutterstock_1239319498.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>It is good to plan your visit to the Raja’s seat either early morning or during the sunset hours. Capturing golden moments of the sun rising from the background of mist-laden valleys have always been adored by photographers visiting here. Similar scenery is created during the evening when the sun is about to sign off with its golden smile. </li>
+              <li>Best to visit Raja’s Seat early in the morning. You get to see a golden moment of the sun rising from the back of mist-laden lush green mountain ranges or try to reach Raja’s Seat during evening hours. Golden sparkling rays of the setting sun is no less than a wonderful sightseeing activity. </li>
+              <li>Best time to visit Kudremukh: 06:00 am - 07:30 pm.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>04.  </b>Tadiandamol Peak</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--r1O2srBM--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/945/original/1556181271_shutterstock_1291221913.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Elevation: 1,748 m</li>
+              <li>prominence: 833 m</li>
+              <li>Easiest route: Hiking</li>
+              <li> The peak is 30 km away from Virajpet.</li>
+              <li>Tadiandamol peak can be visited at any time of the year except for the monsoon months.</li>
+              <li>Timings to visit peak is from 6am to 6pm</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>05.  </b>Namdroling Monastery Bylakuppe</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--Bo0wXr7F--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/959/original/1507967789_Namdroling_Monastery_-_places_to_visit_in_coorg.jpg.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Situated at 34 km distance from Coorg district</li>
+              <li>Namdroling Monastery is a popular spiritual centre and also among the best place in Coorg.</li>
+              <li> The monasteries open from approximately 8 am in the morning and closes by 7 pm. </li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>06.  </b>Brahmagiri Hill</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--UPx6j5F---/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/946/original/m_Brahmagiri_Hill_Trek_1.jpg.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Elevation: 1,608 m</li>
+              <li>Prominence: 789 m</li>
+              <li>Easiest route: Hiking</li>
+              <li>Gates to the hillock open at 10 am and close at 4pm. Takes about 45 min up & down.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>07.  </b>Nishani Motte</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s---22DmTTE--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/955/original/maxresdefault.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The trekking trail of 15 Km begins from the untamed woodlands of Tala Cauvery forest range which is home to exotic wildlife including rare species of trees and animals. </li>
+              <li>Average timings for reaching the peak of Nishani Motte starting from the base is between 6 AM -6 PM. </li>
+              <li> Entry Fee: Rs. 200 to be paid at the forest office.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>08.  </b>Pushpagiri Wildlife Sanctuary</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--e5s6Cu1l--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/941/original/elephant.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Pushpagiri Wildlife Sanctuary. - Timings: 5.30 am – 5.00 pm every day. </li>
+              <li>Entry Fee: Rs. 75/- at the check post and extra charges for camping.</li>
+              
+              </ul>
+            </div>
+        </div>
+      </div><br><br>  
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>09.  </b>Mandalpatti</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s---Do49m1y--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/002/947/original/mandalpatti-trek-coorg-tourism-entry-ticket-price.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Mandalpatti is dituated at a altitude of 4050 feet.</li>
+              <li>Visiting Time: Mandalpatti is open to visitors from 6 AM in the morning till 6 PM in the evening during all days of the week. </li>
+              <li>Visiting Time: Mandalpatti is open to visitors from 6 AM in the morning till 6 PM in the evening during all days of the week. </li>
+              <li></li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br> 
+  </div>
+    
+    <!--<h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>The top sightseeing places in Mysore are Mysore Palace, Brindavan Gardens, Somanathapura Temple, Mysore Zoo, Chamundeshwari Temple, Shuka Vana...</p>
+    <h3>More Text</h3>
+    <p>The top activities in Mysore are Enjoy Panaromic View of Mysore with Joyride, A 3-hour Open Jeep Safari in Mysore, Discover All City Highlights: Mysore Sightseeing Tour, A Full-day Open Jeep Tour in Coorg, Jet Skiing near Mysore, Bandipur National Park Open Jeep Safari from Mysore..</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>-->
+ 
+  <div class="main">
+    <!--<h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 17, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Then visit Chumundi Hills Bull Statue, Sri Chamundeshwari Temple and Zoological Gardens and Srirangapatna.</p>
+    <p>The cultural ambience and achievements of Mysore earned it the sobriquet Cultural Capital of Karnataka. Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that take place during the Dasara festival when the city receives many tourists from around the world.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 7, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p> October to February: This is one of the best times of the year to visit Mysore because the weather is cool with temperature dipping to a minimum of 10°C. March to May: Summers in Mysore are warm with the temperature varying between 22°C and 39°C..</p>-->
+    <h3>Coorg Top Experiences</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--pEUiHkes--/c_fill,f_auto,fl_strip_profile,h_775,q_auto,w_1600/v1/images/photos/000/134/639/original/1539861676_bali-sobek-ayung-rafting_62bcccbdbd7732466a2bf365a1a7e5e7379e9686.jpg.jpg?1539861675" alt="mountain" style="width:100%">
+          <h1>River rafting in Coorg</h1>
+          <p class="price"><s>Rs 1,199</s></p>
+          <p class="price">Rs 899</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToqVA9SoFlohnpRtlB9rw_m0S7YYYwq4PptA&usqp=CAU" alt="Rafting" style="width:100%">
+          <h1>Nishani Motte Trek,Coorg</h1>
+          <p class="price"><s>Rs 4,049</s></p>
+          <p class="price">Rs 3,699</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="data:image/jpeg;base64,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" alt="camp" style="width:100%">
+          <h1>Coorg Coffee Plantation Tour </h1>
+          <p class="price"><s>Rs 1,907</s></p>
+          <p class="price">Rs 1,250</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--uZjefAOg--/c_fill,dpr_1.0,g_auto,h_210,w_350/v1/experiences/images/000/000/003/original/1574239410_shutterstock_1179953662_%283%29.jpg.jpg" alt="Tea" style="width:100%">
+          <h1>Mandalpatti Jeep Safari</h1>
+          <p class="price"><s>Rs 1,199</s></p>
+          <p class="price">Rs 899</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+    <h3>Luxury Deals and Homestays</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--uWxy2-95--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/286/342/original/1596786233_1499684987-the-tamara-1587047868.jpg.jpg" alt="resort" style="width:100%">
+          <h2>The Tamara Coorg | Book Now & Get Flat 30% off</h2>
+          <p class="price"><s>Rs 20,160</s></p>
+          <p class="price">Rs 13,548</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><a href="https://www.thrillophilia.com/tours/a-thrilling-escape-into-the-scenic-beauty-of-coorg"><button><a href="https://www.thetamara.com/">Book Now</a></button></a></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--Q_lQ4zhZ--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/283/734/original/1596286783_Thumb.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Heritage Resort,Coorg | Book at Flat 40% off</h2>
+          <p class="price"><s>Rs 14,372</s></p>
+          <p class="price">Rs 8,500</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.evolveback.com/coorg/?keyword=resorts%20in%20coorg&matchtype=p&adposition&campaignid=11758757269&device=c&location=1007773&placement&utm_source&utm_medium&gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGhP5uvdZic5YdQP_sFK02alsCtsGK7m2I3fbJpFuW2yTeEAPFQjPxBoCcEEQAvD_BwE">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--Ja_6wE4T--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/284/502/original/1596269324_Thumb.jpg.jpg" alt="homestays" style="width:100%">
+          <h2>Old Kent Estates and Spa Resort, Coorg</h2>
+          <p class="price"><s>Rs 20,596</s></p>
+          <p class="price">Rs 20,338</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="http://www.oldkentestate.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--bAonbEzl--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/284/057/original/1596287420_thumb.jpg.jpg" style="width:100%">
+          <h2>Coorg Wilderness Resort | Book at flat 30% off</h2>
+          <p class="price"><s>Rs 11,429</s></p>
+          <p class="price">Rs 8,599</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+          <p><button><a href="https://www.coorgwildernessresort.in/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<!--<div class="tourism">
+  <h2>Tourism</h2>
+</div>-->
+
+</body>
+</html>

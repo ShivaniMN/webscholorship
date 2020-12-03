@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+    <link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Turret+Road:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&family=Turret+Road:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+		html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Text Align */
+.text-c {
+    text-align: left;
+}
+.text-l {
+    text-align: left;
+}
+.text-r {
+    text-align: right
+}
+.text-j {
+    text-align: justify;
+}
+
+/* Text Color */
+.text-whitesmoke {
+    color: whitesmoke;
+}
+.text-darkyellow {
+    color: rgba(255, 235, 59, 0.432)
+}
+
+/* Lines */
+
+.line-b {
+    border-bottom: 1px solid #FFEB3B !important;
+}
+
+/* Buttons */
+.button {
+    border-radius: 3px;
+}
+.form-button {
+    background-color: rgba(255, 235, 59, 0.24);
+    border-color: rgba(255, 235, 59, 0.24);
+    color: #e6e6e6;
+}
+.form-button:hover,
+.form-button:focus,
+.form-button:active,
+.form-button.active,
+.form-button:active:focus,
+.form-button:active:hover,
+.form-button.active:hover,
+.form-button.active:focus {
+    background-color: rgba(255, 235, 59, 0.473);
+    border-color: rgba(255, 235, 59, 0.473);
+    color: #e6e6e6;
+}
+.button-l {
+    width: 100% !important;
+    text-align-last: center;
+}
+
+/* Margins g(global) - l(left) - r(right) - t(top) - b(bottom) */
+
+.margin-g {
+    margin: 15px;
+}
+.margin-g-sm {
+    margin: 10px;
+}
+.margin-g-md {
+    margin: 20px;
+}
+.margin-g-lg {
+    margin: 30px;
+}
+
+.margin-l {
+    margin-left: 15px;
+}
+.margin-l-sm {
+    margin-left: 10px;
+}
+.margin-l-md {
+    margin-left: 20px;
+}
+.margin-l-lg {
+    margin-left: 30px;
+}
+
+.margin-r {
+    margin-right: 15px;
+}
+.margin-r-sm {
+    margin-right: 10px;
+}
+.margin-r-md {
+    margin-right: 20px;
+}
+.margin-r-lg {
+    margin-right: 30px;
+}
+
+.margin-t {
+    margin-top: 15px;
+}
+.margin-t-sm {
+    margin-top: 10px;
+}
+.margin-t-md {
+    margin-top: 20px;
+}
+.margin-t-lg {
+    margin-top: 30px;
+}
+
+.margin-b {
+    margin-bottom: 15px;
+}
+.margin-b-sm {
+    margin-bottom: 10px;
+}
+.margin-b-md {
+    margin-bottom: 20px;
+}
+.margin-b-lg {
+    margin-bottom: 30px;
+}
+
+/* Bootstrap Form Control Extension */
+
+.form-control,
+.border-line {
+    background-color: #5f5f5f;
+    background-image: none;
+    border: 1px solid #424242;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.form-control:focus,
+.border-line:focus {
+    border-color: #FFEB3B;
+    background-color: #616161;
+    color: #e6e6e6;
+}
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control::-webkit-input-placeholder { 
+	color: #BDBDBD;
+	padding: 15px;
+	margin: 20px 20px;
+ }
+
+/* Container */
+
+.container-content {
+    background-color: #3a3a3aa2;
+    color: inherit;
+    padding: 15px 30px 20px 20px;
+    margin-right: 5px;
+    border-color: #FFEB3B;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 2px 0;
+}
+
+/* Backgrounds */
+
+.main-bg {
+
+    background: #424242;
+    background: linear-gradient( #424242, #212121);
+}
+
+/* Login & Register Pages*/
+
+.login-container {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.login.login-container {
+    width: 300px;
+}
+.wrapper.login-container {
+    margin-top: 140px;
+}
+.logo-badge {
+    color: #e6e6e6;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0;
+}
+
+.flex_container{
+    width: 1000px;
+    height: 100px;
+    margin-left: 130px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    align-items: flex-start;
+
+}
+.flex_lside{
+    background-color: rgba(120, 120, 120, 0.2);
+    width:300px;
+}
+
+.flex_middle{
+    background-color: rgba(150, 150, 150, 0.2);
+    width: 300px;
+}
+
+.flex_rside{
+    background-color: rgba(120, 120, 120, 0.2);
+    width: 300px;
+}
+
+
+	</style>
+</head>
+<body>
+ 	<body class="main-bg">
+        <div class="login-container text-c animated flipInX">
+                <div>
+                    <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                </div>
+                    <!--<h3 class="text-whitesmoke">Sign In Template</h3>-->
+                    <h1 style="font-family: Staatliches;"><p class="text-whitesmoke">Contact Us</p></h1>
+                    <p style="color: white; font-family: Staatliches">Always Free to Help!</p>
+                <div class="container-content" style="font-family: Montserrat;">
+                    <form class="margin-t">
+                        <div class="form-group">
+                            <label for="Fullname" style="color:white;text-align: left;">Your Name(required):</label>
+                            <input type="text" id="Fullname" class="form-control" placeholder="Fullname*" required="">
+                        </div><br>
+                        <div class="form-group">
+                            <label for="E-mail" style="color:white;">Your E-mail(require):</label>
+                            <input type="email" class="form-control" placeholder="@gmail.com" id="E-mail" required="">
+                        </div><br>
+                        <div class="form-group">
+                            <label for="Age" style="color:white;">Subject:</label>
+                            <input type="text" class="form-control" placeholder="Age" id="Age" required="">
+                        </div><br>
+                        <div class="form-group">
+                            <label for="Phone number" style="color:white;">Phone number:</label>
+                            <input type="text" class="form-control" placeholder="91+" id="Phone number" required="">
+                        </div><br>
+                        <div class="form-group">
+                            <!--<p style="color: white;">How do you rate your overall experience?</p>
+                            <input type="radio" id="Bad" name="ratings" value="Bad">
+                            <label for="Bad" style="color: white;">Bad</label><br>
+                            <input type="radio" id="Average" name="ratings" value="Average">
+                            <label for="Average" style="color: white;">Average</label><br>
+                            <input type="radio" id="Good" name="ratings" value="Good">
+                            <label for="Good" style="color: white;">Good</label><br><br>-->
+                            <label for="subject" style="color: white;">Your Message:</label>
+                                <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px; width:300px;"></textarea><br><br>
+
+                        </div>
+                        <button type="submit" class="form-button button-l margin-b">Submit</button>
+        
+                        <!--<a class="text-darkyellow" href="#"><small>Forgot your password?</small></a>
+                        <p class="text-whitesmoke text-center"><small>Do not have an account?</small></p>
+                        <a class="text-darkyellow" href="#"><small>Sign Up</small></a>-->
+                    </form>
+                    <!--<p class="margin-t text-whitesmoke"><small> Your Name &copy; 2018</small> </p>-->
+                </div>
+
+               
+            </div>
+             <div class="flex_container" style="font-family: Montserrat;">
+                    <div class="flex_lside"><i class="fa fa-mobile" aria-hidden="true"> Mobile<br> +919986740014</i></div>
+                    <div class="flex_middle"><i class="fa fa-phone" aria-hidden="true">  Telephone <br> +0821-694452</i></div>
+                    <div class="flex_rside"><i class="fa fa-envelope-o" aria-hidden="true">  Email <br> explore@gmail.com</i></div>
+
+                    
+                </div>
+</body>
+
+
+</body>
+</html>

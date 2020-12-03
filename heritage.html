@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Heritage City</title>
+<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Lobster&family=Open+Sans&family=Roboto:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Turret+Road:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+
+
+.header {
+  padding: 80px;
+  height: 630px;
+  text-align: right;
+  background: #1abc9c;
+  color: white;
+  /*background-image: url(https://cdn.dribbble.com/users/1363686/screenshots/5396514/1.jpg);*/
+  background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mysore-palace-kurians-art-work.jpg);
+  background-size: 100%;
+  background-blend-mode: center;
+  font-family: Turret Road;
+  }
+
+
+
+
+  /*.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  background-image: url(https://cdn.dribbble.com/users/1363686/screenshots/5396514/1.jpg);
+  background-size: 10%;
+  filter: blur(2px);
+  font-family: Montserrat;
+}*/
+/*.header .bg-image {
+    background-image: url(https://cdn.dribbble.com/users/1363686/screenshots/5396514/1.jpg);
+    background-size: 10%;
+    filter: blur(2px); 
+    background: #1abc9c; 
+}
+
+.header .bg-text {
+  padding: 80px;
+  text-align: center;
+  color: white;
+  font-family: Montserrat;
+}*/
+
+
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.container {
+  position: relative;
+  /*width: 50%;
+  max-width: 300px;*/
+}
+
+.image {
+  display: block;
+  /*width: 100%;
+  height: auto;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 86%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1; 
+}
+
+
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  color: orange;
+}
+
+.alert {
+  padding: 5px;
+  background-color: #f59542;
+  color: white;
+  font-family: Open Sans;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+  
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="bg-image"></div>
+  <div  class="bg-text">
+  <h1 style="font-size: 90px;">MYSURU</h1>
+  <p style="font-size: 45px;"><b>The Heritage City</b></p>
+  </div>
+</div>
+
+<!--<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link</a>
+  <a href="#">About</a>
+  <a href="#" class="right">Log Out</a>
+</div>-->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="feedback1.html">Feedback</a></li>
+      <li><a href="mapsmys.html">Map</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="sign_in.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login1.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+      
+    </form>
+  </div>
+</nav>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h3>Alert<strong> COVID-19: MYSURU</strong> is in orange zone</h3>
+  <div><h6>Last update: <strong>1st November 2020</strong></h6></div>   
+</div>
+
+
+<div class="row">
+  <div class="side">
+    <h2>MUST PLACES TO VISIT</h2>
+    <div>
+      <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>01.  </b>Mysuru Palace</h1></div>  
+    <div class="container">
+      <!--<h5><u>Mysuru Palace</u></h5>-->
+      <img src="https://images.thrillophilia.com/image/upload/s--1bK5NRtr--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/087/581/original/1568097723_shutterstock_1325348915.jpg.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+           <ul>
+             <li>Opens from 10am to 5:30pm</li>
+           </ul>
+      </div>
+    </div>
+  </div><br><br>
+      
+  <!--</div>-->
+    <div>
+      <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>St. Philomena's Cathedral</h1></div> 
+    <div class="container">
+      <img src="https://images.thrillophilia.com/image/upload/s--96EhTbKC--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/087/610/original/1553263900_1200px-St._Philomena_27s_Church_2C_Mysore_04.jpg.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens at 5am to 6pm</li>
+        </ul>
+      </div>
+    </div>
+  </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>03.  </b>Brindavan Garden</h1></div>
+    <div class="container">
+      <img src="https://images.thrillophilia.com/image/upload/s--CTjxu8iU--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/087/661/original/1568456428_shutterstock_162648665.jpg.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens from 6am to 8pm</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>04.  </b>Karanji Lake</h1></div>
+    <div class="container">
+      <img src="https://cdn.telanganatoday.com/wp-content/uploads/2018/10/Karanji-Lake.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens from 8:30am to 5:30pm</li>
+          <li>Tuesdays holiday</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>05.  </b>Sree Jayachamarajendra Zoological Gardens</h1></div>
+    <div class="container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSscQn_TaWUYHK06rDztiUmM5tQxrJSx2nEw&usqp=CAU" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens from 8:30am to 5:30pm</li>
+          <li>Tuesdays holiday</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>06.  </b>Chamundi Hill</h1></div>
+    <div class="container">
+      <img src="https://2.bp.blogspot.com/-N7KO44XhPa4/T6lKjolBznI/AAAAAAAAAgI/wzGofpB5x7I/s1600/dsc_7250.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens from 7:30 to 9:30</li>
+          <li>closes during lunch time and at twilight</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>08.  </b>Rail Museum</h1></div>
+    <div class="container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/YPClassSteam2511.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">
+        <ul>
+          <li>Opens from 10am to 5:30pm</li>
+          <li>Mondays holiday</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>
+
+   <div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>09.  </b>B.R Hills</h1></div>
+    <div class="container">
+      <img src="https://www.nijagunaresorts.co.in/wp-content/uploads/2017/08/brhills1.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">B.R Hills</div>
+    </div>
+   </div><br><br>
+   <!--<div>
+    <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>St. Philomena's Cathedral</h1></div>
+    <div class="container">
+      <img src="https://mysore.ind.in/wp-content/uploads/2010/10/golden-temple-bylakuppe1.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">Tibet Camp Kushalnagr
+        <ul>
+          <li>Opens from 7am to 7pm</li>
+        </ul>
+      </div>
+    </div>
+   </div><br><br>-->
+   <!--<div class="fakeimg" style="height:200px;">Image</div>-->
+    <div>
+    <h3 style="font-family: Roboto; font-size: 35px;">MORE INFO:</h3>
+      <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%; font-size: 25px; ">
+        <p>The top sightseeing places in Mysore are Mysore Palace, Brindavan Gardens, Somanathapura Temple, Mysore Zoo, Chamundeshwari Temple, Shuka Vana...</p>
+        <p>The top activities in Mysore are Enjoy Panaromic View of Mysore with Joyride, A 3-hour Open Jeep Safari in Mysore, Discover All City Highlights: Mysore Sightseeing Tour, A Full-day Open Jeep Tour in Coorg, Jet Skiing near Mysore, Bandipur National Park Open Jeep Safari from Mysore..</p>
+      </div>
+      <h3 style="font-family: Roboto; font-size: 35px;">BEST TIME TO VISIT MYSURU:</h3>
+      <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%; font-size: 25px; ">
+          <p><b>March to May:</b> Summers in Mysore are warm with the temperature varying between 22°C and 39°C. The days are bright and sunny and the evenings are quite cool and pleasant so you can easily carry on with all tourist activities. May is usually the hottest month of the year here.<br></p>
+
+          <p><b>June to September:</b> Monsoon months in Mysore experience medium to heavy rains and this is a beautiful time to witness the lush green surroundings. Night time tends to get quite cool after the rains so it’s a good idea to carry a light jacket.</p>        
+      </div>
+    </div>
+    <!--<div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>-->
+    <!--<h3>Mysuru is also popular for:</h3>
+    <div class="container">
+      <img src="https://mysurufoodiefood.files.wordpress.com/2019/09/she_who_eats___b2yb_sufnaa-01350559639688971480.jpeg?w=600" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">Mysore Pak</div>
+    </div>
+     <div class="container">
+      <img src="https://advantagekarnataka.in/images/demo/5433915546.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">Mysore Silk</div>
+    </div>
+    <div class="container">
+      <img src="https://imgmedia.lbb.in/media/2017/06/594168f144f85d589e231191_5941666e44f85d589e230f82_1497458929032.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">Mysore arts</div>
+    </div>
+     <div class="container">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71eJAaD6aBL._SL1500_.jpg" height="500" width="1000" alt="palace" class="image">
+      <div class="overlay">Mysore Sandal Soap</div>
+    </div>
+  </div>-->
+
+
+
+  <div class="main">
+
+      <h3>Stays In Mysuru</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://vr-thumbs.vacationrenter.com/booking/cd2ea0bf7-fed4ed4.webp" alt="mountain" style="width:100%">
+          <h1>Radisson Blu</h1>
+          <p class="price"><s>Rs 3,000</s></p>
+          <p class="price">Rs 2,880</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mysore#">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/46/e9/91/exterior-view.jpg?w=400&h=300&s=1" alt="Rafting" style="width:100%">
+          <h1>Grand Mercure</h1>
+          <p class="price"><s>Rs 3,536</s></p>
+          <p class="price">Rs 1,200</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star chec"></span>
+          <p><button><a href="https://www.grandmercuremysuru.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://pix5.agoda.net/hotelImages/298/298976/298976_15072720560033130523.jpg?s=450x450" alt="camp" style="width:100%;">
+          <h1>The Quorum</h1>
+          <p class="price"><s>Rs 3,500</s></p>
+          <p class="price">Rs 1,720</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="http://www.thequorumhotel.com/">Book Now<a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://riomeridianhotels.com/wp-content/uploads/2019/04/rio-meridian-front-view-at-night-1-1.jpg" alt="Tea" style="width:100%;">
+          <h1>Rio Meridian</h1>
+          <p class="price"><s>Rs 3,199</s></p>
+          <p class="price">Rs 2,559</p><br>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="https://riomeridianhotels.com/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+      <h3>Mysuru Is Also Famous For</h3>
+      <div class="col-container">
+
+        <div class="col">
+          <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaTXb_ewG_AywfiHpae5XekwLhnGvcwjliYA&usqp=CAU" alt="mountain" style="width:100%">
+          <h1>Mysore Pak</h1>
+          <p class="price">Rs 200(Depends on the quantity you purchase</p>
+          <!--<h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>--><br>
+          <p><button><a href="CgZwc3ktYWIQAxgAMgsILhDHARCvARCTAjIICC4QxwEQrwEyBQgAEMkDMgUIABCSAzIFCAAQkgMyCAguEMcBEK8BMggILhDHARCvATICCAAyAggAMgIIADoOCC4QxwEQrwEQkQIQkwI6BQgAEJECOggIABCxAxCDAToFCAAQsQM6BAgAEEM6BQguEJECOgQILhBDOg0ILhCxAxDHARCjAhBDOgoILhDHARCjAhBDOggILhCxAxCDAToHCC4QsQMQQzoKCC4QsQMQgwEQQzoKCAAQsQMQgwEQQzoCCC46BQguELEDULRUWKZrYPx4aAJwAXgBgAHqA4gBtBaSAQkwLjMuOC4wLjGYAQCgAQGqAQdnd3Mtd2l6sAEAwAEB">View Address</a></button></p>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card">
+          <img src="data:image/jpeg;base64,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" alt="Rafting" style="width:100%">
+          <h1>Mysore Sandal Soap</h1>
+          <p class="price">Rs 1,200</p>
+          <!--<h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>-->
+          <p><button><a href="http://www.mysurusandal.co.in/">View More</a></button></p>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQszLpfW2OEEFxqAoRqB18OHRpCfc9IkCAbNA&usqp=CAU" alt="camp" style="width:100%">
+          <h1>Mysore Silk Saree</h1>
+          <p class="price">Rs 31,620</p>
+          <!--<h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>-->
+          <p><button><a href="http://www.ksicsilk.com/">View More</a></button></p>
+          </div>  
+        </div>
+
+
+        <div class="col">
+          <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP4BVqhsVP6zW1OmzABH9EoikB4oM_l38EYw&usqp=CAU" alt="Tea" style="width:100%">
+          <h1>The Famous Mysore Arts</h1>
+          <p class="price">Rs 20,000</p>
+          <!--<h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>-->
+          <p><button><a href="http://www.mysorearts.com/">View More</a></button></p>  
+          </div>  
+        </div>
+
+    </div>
+    
+  </div>
+</div>
+
+<!--<div class="tourism">
+  <h2>Tourism</h2>
+</div>-->
+
+</body>
+</html>

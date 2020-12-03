@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME PAGE</title>
+	<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&family=Nerko+One&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+		.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar a.right
+{
+	float: right;
+}
+#j1
+{
+	font-family: calibri;
+	font-size: 20px;
+	color: white;
+	background-color: grey;
+}
+.main
+{
+
+	text-align: left;
+	background-image: url(https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/gfMXx2gQ-1380x690.jpeg);
+	/*background-color: rgba(0, 180, 75, 0.5);*/
+	background-size: 100%;
+	height: 600px;
+	width: 1500px;
+	background-blend-mode: center;
+
+}
+.select 
+{
+	width: 20px;
+	background-color: ;
+	font-size: 30px;
+	font-family: Indie Flower;
+	height: 10px;
+	position: relative;
+}
+select
+{
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	border-radius: 25px;
+	width:600px;
+	height: 60px;
+	margin-left: 350px;
+	margin-right: 350px;
+
+}
+.button
+{
+	background-color: green;
+	color: white;
+	width: 280px;
+	height: 70px;
+	font-size: 30px;
+	text-align: center;
+	border: 2px solid white;
+}
+p
+{
+	font-family: times new roman;
+	font-size: 30px;
+	color: lightgrey;
+} 
+	</style>
+</head>
+<body>
+
+	<div class="navbar">
+		<a href="homepage.html" class="active"><i class=" fa fa-home" aria-hidden="true">
+ 		Home</i></a>
+  		<a  href="aboutus.html" ><i class=" fa fa-users" aria-hidden="true">
+ 		About Us</i></a>
+ 		<a class="right" href="contactus.html" ><i class=" fa fa-phone" aria-hidden="true">
+ 		Contact Us</i></a>
+ 		<a class="right" href="login1.html" ><i class=" fa fa-user" aria-hidden="true">
+ 		Login</i></a>
+ 		<a class="right" href="sign_in.html" ><i class=" fa fa-user" aria-hidden="true">
+ 		Sign Up</i></a>
+ 		<a class="right" href="feedback1.html" ><i class=" fa fa-comments-o" aria-hidden="true">
+ 		Feedback</i></a>
+ 	</div>
+
+ 	<div class="main">
+ 		<br><br><br><br>
+
+ 		 <p style="font-family: Pacifico; color: white; font-size: 100px;">Explore The Unexplored</p><br><br>
+ 		<center><h2 style="font-family: Indie Flower; color: white;"><b>select the city you have to visit!!</b></h2></center><br>
+ 		<div class="select">
+ 			<select name="select-city" onchange="location = this.value;"> 
+ 			<option value="0" ><b>Select Place</b></option>
+ 			<option value="heritage.html">Mysuru</option>
+ 			<option value="coorg.html">Coorg</option>
+ 			<option value="chickmagluru.html">Chikmagaluru</option>
+ 			<option value="mangaluru.html">Mangaluru</option>
+ 			<option value="northkarnataka.html">North Karnataka</option>
+    		</select>
+   		</div><br><br> <br><br>
+ 	</div>
+
+</body>
+</html>

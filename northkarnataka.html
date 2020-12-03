@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>North Karnataka</title>
+<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Open+Sans&family=Righteous&family=Turret+Road:wght@700&family=Ultra&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  height: 700px;
+  text-align: left;
+  background: #1abc9c;
+  color: white;
+  background-image: url(https://img.traveltriangle.com/blog/wp-content/uploads/2020/01/cover-for-Places-Near-Dandeli_15th-Jan.jpg);
+  background-size: 100%;
+  background-blend-mode: center;
+  font-family: Righteous;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+.alert {
+  padding: 5px;
+  background-color: #f59542;
+  color: white;
+  font-family: Open Sans;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+.container {
+  position: relative;
+  /*width: 50%;
+  max-width: 300px;*/
+}
+
+.image {
+  display: block;
+  /*width: 100%;
+  height: auto;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 77%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.container:hover .overlay {
+  opacity: 1; 
+}
+
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  color: orange;
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!--<h1>ULTISMART</h1>
+    <h2>INFOTECH</h2>
+  <h3>MYSORE</h3>
+  <h4>TOURISM</h4>
+  <h5>MYSORE PALACE</h5>-->
+  <h1 style="font-size: 90px;">North Karnataka</h1>
+  <p style="font-size: 45px;"><b>The Land Of Freedom Fighters</b></p>
+  
+  <!--<p>A <b>responsive</b> web app created by NIE & VVCE ISE.</p>-->
+</div>
+
+<!--<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Link</a>
+</div>-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="feedback1.html">Feedback</a></li>
+      <li><a href="mapsnorth.html">Map</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="sign_in.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login1.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h3>Alert<strong> COVID-19: NORTH KARNATAKA</strong> is in orange zone</h3>
+  <div><h6>Last update: <strong>1st November 2020</strong></h6></div>   
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Must Places to Visit:</h2><br>
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>01.  </b>Badami Caves</h1></div>  
+        <div class="container">
+          <img src="https://punyadarshan.com/wp-content/uploads/2019/12/caves-temple.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The temples are about 88 miles (142 km) east of Belagavi (IATA Code: IXT), and 87 miles (140 km) northwest of Hampi. The Malaprabha River is 3 miles (4.8 km) away. The cave temples are 14 miles (23 km) from the UNESCO world heritage site Pattadakal and 22 miles (35 km) from Aihole.</li>
+              <li>Time taken to visit Badami Caves 2 to 3 hours.</li>
+              <ul>Entry Fee:</ul>
+                <li>Rs10 per person for Indian Natinals</li>
+                <li>Rs100 per person for Foreign Nationals</li>
+                <li>Entry free for childen up to 15 years</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>Pattadakal</h1></div>  
+        <div class="container">
+          <img src="https://www.holidify.com/images/bgImages/PATTADAKAL.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Location: Bagalkot district, Karnataka</li>
+              <li>Nearest city: Badami</li>
+              <li>There is an entry fee of Rs. 30 for entering Pattadakal monuments and temples. You will have to pay extra for camera.</li>
+              <li>mallikarjuna temple, pattadakal remains open form 06:00 AM - 06:00 PM</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>03.  </b>Hampi</h1></div>  
+        <div class="container">
+          <img src="https://images.assettype.com/indynetwork%2F2020-04%2F98952d5f-9f26-4469-83f0-831ae7f6fdab%2F1200px_Elephant_Stable__Hampi__Karnataka.jpg?auto=format&q=35&w=1200&rect=0,0,1200,675" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <ul>Detailed Timings:
+                <li>Virupaksha Temple -- Sunrise to Sunset
+                <li>Vittala Temple -- 6 AM and 6 PM</li>
+                <li>Heritage Museum at the Hampi Bazaar 10 AM and 1 PM - 3 AM to 6 PM</li>
+                <li>Archaeology Museum at Kamalapura  10 AM and 5 PM</li>
+                <li>Zenena Enclosure, Elephant Stables and Lotus Mahal  6 AM and 6 PM</li>
+                <li>Queen’s Bath  6 AM and 6 PM</li>
+              </ul>
+              <ul>Entry Fee:
+                <li>Indian Visitor: Rs 35</li>
+                <li>Forigner Visitor: Rs550</li>
+              </ul>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>04.  </b>Aihloe</h1></div>  
+        <div class="container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/8th_century_Durga_temple_exterior_view%2C_Aihole_Hindu_temples_and_monuments_3.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Area: 5 km²</li>
+              <li>Nearest city: Badami</li>
+              <li>Timings to Visit Aihole is from 6am to 6pm.</li>
+              <li>Aihole is 35 kilometres (22 mi) from Badami and about 9.7 kilometres (6.0 mi) from Pattadakal.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>05.  </b>Bidar Fort</h1></div>  
+        <div class="container">
+          <img src="https://images.thequint.com/thequint/2015-07/6ed8807c-9d35-476a-ab6c-d7db27d31db5/Bidar%20Fort%20-%20Hero%20image1.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Timings : 9:00 AM - 5:00 PM.</li>
+              <li>Time Required : 2-3 hrs.</li>
+              <li>Entry Fee : No entry fee.</li>
+              <li> the best time to visit Bidar Fort is between October and March as the weather remains pretty pleasant over there.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>06.  </b>Gol Gumbaz, Bijapur</h1></div>  
+        <div class="container">
+          <img src="https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzVmODdhNzM1MTYxY2M4NDE3NV8xMDI0cHgtR29sX0d1bWJhei5qcGciXSxbInAiLCJjb252ZXJ0IiwiIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdLFsicCIsInRodW1iIiwiNzgweDUyMCMiXV0/1024px-Gol_Gumbaz.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Entry Fees: Indian visitors- Rs 15 per head, Forign visitors- Rs 200 per head and Children up to 15 years of age- No Fees.</li>
+              <li>Visiting Time: all seven days of week, 10am to 5pm.</li>
+              <li>Visiting Duration: Since there are lots of things to be seen inside the tomb, it may be easy  to take 1 to 2 hours to finish your visit at the Gol Gumbaz. </li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>07.  </b>Kudala Sangama</h1></div>  
+        <div class="container">
+          <img src="https://www.badamitravels.com/tb-images/B2C/Holiday/gallery/a03c1ec7-8c6_big.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Distance (From Alampur Bus Station): 1 Kms</li>
+              <li>Trip Duration (Including Travel): 30 Mins</li>
+              <li>Timings: The temple is open from 5:00 AM to 12:30 PM and from 4:00 PM to 8:00 PM.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>08.  </b>Saundatti Yellamma Temple</h1></div>  
+        <div class="container">
+          <img src="https://metrosaga.com/wp-content/uploads/2019/02/10-1-696x364.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Goddess Renuka and a pilgrimage destination located about 5 kilometres (3.1 mi) away from the town of Saundatti </li>
+              <li>Timings to visit temple is from 6.30am to 4.30pm in morning and 6.30pm to 10pm iin the evening.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>  
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>09.  </b>Narasimha Jharni</h1></div>  
+        <div class="container">
+          <img src="https://metrosaga.com/wp-content/uploads/2018/11/7-19.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The ancient temple is excavated in a 300 m tunnel under the Manichoola hill range situated at around 4.8 km from the city.</li>
+              <li>Trip Duration (Including Travel): 1-2 Hours</li>
+              <li>Visitors need to go through a tunner with 4-5 feet deep water. Male pilgrims need to remove shirt.</li>
+              <li>Timings: 7 AM to 6 PM.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br> 
+  </div>
+    
+    <!--<h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>The top sightseeing places in Mysore are Mysore Palace, Brindavan Gardens, Somanathapura Temple, Mysore Zoo, Chamundeshwari Temple, Shuka Vana...</p>
+    <h3>More Text</h3>
+    <p>The top activities in Mysore are Enjoy Panaromic View of Mysore with Joyride, A 3-hour Open Jeep Safari in Mysore, Discover All City Highlights: Mysore Sightseeing Tour, A Full-day Open Jeep Tour in Coorg, Jet Skiing near Mysore, Bandipur National Park Open Jeep Safari from Mysore..</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>-->
+ 
+  <div class="main">
+    <!--<h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 17, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Then visit Chumundi Hills Bull Statue, Sri Chamundeshwari Temple and Zoological Gardens and Srirangapatna.</p>
+    <p>The cultural ambience and achievements of Mysore earned it the sobriquet Cultural Capital of Karnataka. Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that take place during the Dasara festival when the city receives many tourists from around the world.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 7, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p> October to February: This is one of the best times of the year to visit Mysore because the weather is cool with temperature dipping to a minimum of 10°C. March to May: Summers in Mysore are warm with the temperature varying between 22°C and 39°C..</p>-->
+    <h3>Food to be Tried When You Visit North Karnataka</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://i0.wp.com/mill2door.com/wp-content/uploads/2020/04/Jolada_Rotti__Jowar_Bhakri.jpg?resize=1536%2C1024&ssl=1" alt="rotti" style="width:100%">
+          <h1>Jolad Rotti and Ennegayi</h1>
+          <p class="price">Up to Rs 70</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://4.imimg.com/data4/UQ/PQ/MY-5016870/dharwad-peda-500x500.jpg" alt="Pedha" style="width:100%">
+          <h1>Dharwad Pedha</h1>
+          <p class="price">Rs 95 for 100gm[price depends on quantity]</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1tuzcsTRGpXvKNBVihvvFhHgmL2u0JkQWCQ&usqp=CAU" alt="bajji" style="width:100%">
+          <h1>Girmit and Mirchi Bajji</h1>
+          <p class="price">Rs 70</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://i.ytimg.com/vi/ERCqfX5G4lM/maxresdefault.jpg" alt="nrgis" style="width:100%">
+          <h1>Nargis Mandakki</h1>
+          <p class="price">Rs 30</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span><br><br><br>
+        </div>  
+      </div>  
+    </div>
+
+
+
+    <h3>Luxury Deals and Homestays</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--lLp9Um-n--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/150/880/original/1555741214_Hampi-HP-Banner.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Evolve Back Resort, Hampi</h2>
+          <p class="price"><s>Rs 31,000</s></p>
+          <p class="price">Rs 24,549</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.evolveback.com/hampi/?keyword=evolve%20back%20hampi&matchtype=p&adposition&campaignid=11758427167&device=c&location=1007773&placement&utm_source&utm_medium&gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGhpXBCuQI3Ct3Dmi__RmP8Nk53DpxIrbC7YdfqLGybU9SBpe25S6qhoC48EQAvD_BwE">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--4yh0Irap--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/150/881/original/1555741405_highlights-thumb-2.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Hampi's Boulders Resort</h2>
+          <p class="price"><s>Rs 12,000</s></p>
+          <p class="price">Rs 9,745</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="http://www.hampisboulders.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://img1.wsimg.com/isteam/ip/3c6155ca-cfdc-47b1-a628-b7fb7cacc7b3/Hotel%20Malligi%20Hampi.jpg/:/rs=w:370,m,cg:true" alt="homestays" style="width:100%">
+          <h2>Hotel Mallige, Hospet</h2>
+          <p class="price"><s>Rs 3,136</s></p>
+          <p class="price">Rs 1,149</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://malligihotels.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://www.shivavilaspalacehotel.com/images/homepage/39.jpg" alt="" style="width:100%">
+          <h2>Srivilas Palace, Sandur</h2>
+          <p class="price"><s>Rs 12,211</s></p>
+          <p class="price">Rs 9,596</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+          <p><button><a href="https://www.shivavilaspalacehotel.com/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+
+    <!--<h3>Luxury Deals and Homestays</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--o6NGPl8Z--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/284/173/original/1590502616_serai_chik20.png.jpg" alt="resort" style="width:100%">
+          <h2>Serai Resort,Chikmagalur | Book Now & Get Flat 38% off</h2>
+          <p class="price"><s>Rs 24,239</s></p>
+          <p class="price">Rs 14,999</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><a href="https://www.thrillophilia.com/tours/a-thrilling-escape-into-the-scenic-beauty-of-coorg"><button>Book Now</button></a></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--lHRDo6te--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/286/011/original/1596558673_12466009_1058122114239708_8514921776981644246_o.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Hoysala Village Resort,Chickmagalur | Book at Flat 39% off</h2>
+          <p class="price"><s>Rs 14,690</s></p>
+          <p class="price">Rs 9,745</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--OR1osZAU--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/355/941/original/1601297341_sunset6.png.jpg" alt="homestays" style="width:100%">
+          <h2>A Serene Hideaway on the Slopes of Chikmagluru</h2><br>
+          <p class="price"><s>Rs 8,800</s></p>
+          <p class="price">Rs 6,099</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--drM3i6ww--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/285/200/original/1596103694_tn2.jpg.jpg" alt="homestays" style="width:100%">
+          <h2>A Laidback Hideawayinto the Slopes of Chikmagalur</h2>
+          <p class="price"><s>Rs 8184</s></p>
+          <p class="price">Rs 4099</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+          <p><button>Book Now</button></p>  
+        </div>  
+      </div>  
+    </div>-->
+
+
+
+
+  </div>
+</div>
+
+<!--<div class="tourism">
+  <h2>Tourism</h2>
+</div>-->
+
+</body>
+</html>

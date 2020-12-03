@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chickmagluru</title>
+<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Open+Sans&family=Righteous&family=Turret+Road:wght@700&family=Ultra&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  height: 700px;
+  text-align: left;
+  background: #1abc9c;
+  color: white;
+  background-image: url(https://www.holidify.com/images/cmsuploads/compressed/11975609215_945078922b_o_20190210160449.jpg);
+  background-size: 100%;
+  background-blend-mode: center;
+  font-family: Righteous;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+.alert {
+  padding: 5px;
+  background-color: #f59542;
+  color: white;
+  font-family: Open Sans;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+.container {
+  position: relative;
+  /*width: 50%;
+  max-width: 300px;*/
+}
+
+.image {
+  display: block;
+  /*width: 100%;
+  height: auto;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 77%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.container:hover .overlay {
+  opacity: 1; 
+}
+
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  color: orange;
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!--<h1>ULTISMART</h1>
+    <h2>INFOTECH</h2>
+  <h3>MYSORE</h3>
+  <h4>TOURISM</h4>
+  <h5>MYSORE PALACE</h5>-->
+  <h1 style="font-size: 90px;">CHIKKAMAGALURU</h1>
+  <p style="font-size: 45px;"><b>The Land of Coffee</b></p>
+  
+  <!--<p>A <b>responsive</b> web app created by NIE & VVCE ISE.</p>-->
+</div>
+
+<!--<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Link</a>
+</div>-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="feedback1.html">Feedback</a></li>
+      <li><a href="mapschik.html">Map</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="sign_in.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login1.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h3>Alert<strong> COVID-19: CHIKMAGALURU</strong> is in orange zone</h3>
+  <div><h6>Last update: <strong>1st November 2020</strong></h6></div>   
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Must Places to Visit:</h2><br>
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>01.  </b>Kudremukh</h1></div>  
+        <div class="container">
+          <img src="https://www.holidify.com/images/bgImages/KUDREMUKH.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Elevation: 1,894 m</li>
+              <li>Location: Mudigere Taluk Chikkamagaluru district, Karnataka, India</li>
+              <li>Parent range: Western Ghats</li>
+              <li>Monsoons are from June to September and the region experiences heavy rain, the climate is pleasant and good for witnessing the best of nature.Summers in the region start in March and last till May. It is the best time to visit Kudremukh for those having passion for trekking.</li>
+              <li>Best time to visit Kudremukh: 07:00 am - 01:00 pm.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>Mullayanagiri</h1></div>  
+        <div class="container">
+          <img src="https://i1.wp.com/mangaloretaxi.com/wp-content/uploads/mullyanagiri4.jpg?fit=1600%2C1200&ssl=1" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Elevation: 1,930 m</li>
+              <li>Location: Chikkamagaluru district, Karnataka, India</li>
+              <li>Parent range: Baba Budan giri</li>
+              <li>It is the highest peak in Karnataka</li>
+              <li>Best time to visit Mullayanagiri: 07:00 am - 01:00 pm.</li>
+              <li>Time required to visit Mullayanagiri: 04:00 Hrs.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>03.  </b>Hebbe Falls</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--9maimzzo--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/040/098/original/1567670444_shutterstock_1098202937.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Height: 168 m</li>
+              <li>Watercourse: Bhadra</li>
+              <li>Location: 10km away from famous hill station Kemmangundi.</li>
+              <li>The waterfalls is iside a coffee estate and can be reached either by walk or four-wheeler.</li>
+              <li>Best time to visit Kudremukh: 06:00 am - 06:00 pm.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>04.  </b>Baba Budangiri(Datta Peeta)</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--MygpyNod--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/040/076/original/bababudangiri-image-riju-20k.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Elevation: 1,895 m</li>
+              <li>prominence: 292 m</li>
+              <li>Mountain range: Western Ghats</li>
+              <li>The flowering months (March and April) are the best time to visit the Baba Budan Giri hills. The early winter months are a great time to visit these hills.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>05.  </b>Kallathgiri Falls</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--Pam9cClU--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/040/080/original/1527599037_Kallathigiri.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The Kallathigiri Falls, also known as the Kalhatti Falls, is a magnificent natural abode located 50 kilometres away from Chikmakagalur.</li>
+              <li>This waterfall is a perfect destination for leisure mongers and thrill seekers alike, and is popular among both locals as well as tourists.</li>
+              <li> The fall gushes down the majestic Chandra Dona Mountains from a height of about 400 feet.
+              </li>
+              <li>It is especially refreshing during the summer months, when the temperatures are towards the higher side. </li>
+              <li>For the best experience at Kallathigiri, however, one should visit it during the Monsoon Months. During these months, the water is full and flowing fast, and one can enjoy a shower under the Falls.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>06.  </b>Ayyanakere Lake</h1></div>  
+        <div class="container">
+          <img src="https://chikmagalur.tourismindia.co.in/images/places-to-visit/headers/ayyanakere-lake-chikmagalur-entry-fee-timings-holidays-reviews-header.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Ayyanakere is located at a distance of 18km from Chickmagluru</li>
+              <li>Best time to visit Mullayanagiri: 06:00 am - 06:00 pm.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>07.  </b>Sringeri Sharada Peetha</h1></div>  
+        <div class="container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Vidyashankara_Temple_at_Shringeri.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li> Time: Mon-Sat: Mornings from 10am to 2pm, Evenings from 4 to 8pm and  Sundays from 10am to 2pm</li>
+              <li>Distance from Chikmagalur: 80 kilometers</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>08.  </b>Sri Veeranarayana Temple</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--5dU7Lxgo--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/150/922/original/1555748089_1280px-Sri_Veeranarayana_Temple_Belavadi_-_Front_Eastern_View.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Temple is 29km southeast of chikmagluru.it is the short distance from the temple towns of belur and Halebidu.</li>
+              <li>Timings to visit Sri Veeranarayana Temple is from 8am to 7:30pm</li>
+              
+              </ul>
+            </div>
+        </div>
+      </div><br><br>  
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>09.  </b>Belur and Hslebidu</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--KziuE7lx--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/126/161/original/1520338697_belum.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Temple is most famous for its temple Chennakesava which is dedicated to Lord Vishnu and it is one of the serene Chikmaglur attractions.</li>
+              <li>Best Time to visit: The months from October to April is the best time to visit Belur</li>
+              <li>Distance from Chikmagalur Bus Stand: It is about 25 kilometres from Chikmagalur</li>
+              <li>Timings to visit Sri Veeranarayana Temple is from 6:15am to 6:30pm</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br> 
+  </div>
+    
+    <!--<h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>The top sightseeing places in Mysore are Mysore Palace, Brindavan Gardens, Somanathapura Temple, Mysore Zoo, Chamundeshwari Temple, Shuka Vana...</p>
+    <h3>More Text</h3>
+    <p>The top activities in Mysore are Enjoy Panaromic View of Mysore with Joyride, A 3-hour Open Jeep Safari in Mysore, Discover All City Highlights: Mysore Sightseeing Tour, A Full-day Open Jeep Tour in Coorg, Jet Skiing near Mysore, Bandipur National Park Open Jeep Safari from Mysore..</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>-->
+ 
+  <div class="main">
+    <!--<h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 17, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Then visit Chumundi Hills Bull Statue, Sri Chamundeshwari Temple and Zoological Gardens and Srirangapatna.</p>
+    <p>The cultural ambience and achievements of Mysore earned it the sobriquet Cultural Capital of Karnataka. Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that take place during the Dasara festival when the city receives many tourists from around the world.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 7, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p> October to February: This is one of the best times of the year to visit Mysore because the weather is cool with temperature dipping to a minimum of 10°C. March to May: Summers in Mysore are warm with the temperature varying between 22°C and 39°C..</p>-->
+    <h3>Chikmagalur Top Experiences</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--Cx-raemY--/c_fill,dpr_1.0,g_auto,h_210,w_350/v1/experiences/images/000/000/010/original/1579520242_shutterstock_1029226666.jpg.jpg" alt="mountain" style="width:100%">
+          <h1>Mountain Hike Chikmagalur</h1>
+          <p class="price">Rs 3,000</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s---UwmOw_1--/c_fill,dpr_1.0,g_auto,h_210,w_350/v1/experiences/images/000/000/012/original/1579769876_shutterstock_1114604345.jpg.jpg" alt="Rafting" style="width:100%">
+          <h1>Bhadra Rafting Chikmagalur</h1>
+          <p class="price">Rs 1,200</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--xxvflt-Q--/c_fill,dpr_1.0,g_auto,h_210,w_350/v1/experiences/images/000/000/013/original/1579770926_1577273313_party15.jpg.jpg.jpg" alt="camp" style="width:100%">
+          <h1>Camping trip Chikmagalur</h1>
+          <p class="price">Rs 1,620</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button>Book Now</button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--uZjefAOg--/c_fill,dpr_1.0,g_auto,h_210,w_350/v1/experiences/images/000/000/003/original/1574239410_shutterstock_1179953662_%283%29.jpg.jpg" alt="Tea" style="width:100%">
+          <h1>Tea Estate Visit Chikmagalur</h1>
+          <p class="price">Rs 380</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button>Book Now</button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+    <h3>Luxury Deals and Homestays</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--o6NGPl8Z--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/284/173/original/1590502616_serai_chik20.png.jpg" alt="resort" style="width:100%">
+          <h2>Serai Resort,Chikmagalur</h2>
+          <p class="price"><s>Rs 24,239</s></p>
+          <p class="price">Rs 14,999</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.theserai.in/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--lHRDo6te--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_183,q_auto,w_245/v1/images/photos/000/286/011/original/1596558673_12466009_1058122114239708_8514921776981644246_o.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Hoysala Village Resort,Chickmagalur </h2>
+          <p class="price"><s>Rs 14,690</s></p>
+          <p class="price">Rs 9,745</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://hoysalavillageresorts.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://www.javarainresorts.com/img/gallery/GeneralView/thumbs/31.jpg" alt="homestays" style="width:100%">
+          <h2>Java Rain Resort, Chikmagluru</h2>
+          <p class="price"><s>Rs 15,725</s></p>
+          <p class="price">Rs 15,000</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.javarainresorts.com/gallery.html">Book Now</a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://www.trivikhotels.com/img/gallery/trivik-gallery-room-8.jpg" alt="" style="width:100%">
+          <h2>Trivik Resorts, Chikmagalur</h2>
+          <p class="price"><s>Rs 18,184</s></p>
+          <p class="price">Rs 15,880</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.trivikhotels.com/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<!--<div class="tourism">
+  <h2>Tourism</h2>
+</div>-->
+
+</body>
+</html>

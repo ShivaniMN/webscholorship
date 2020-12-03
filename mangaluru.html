@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>mangaluru</title>
+<link rel = "icon" href ="mysore1.jpeg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Open+Sans&family=Righteous&family=Turret+Road:wght@700&family=Ultra&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  height: 700px;
+  text-align: left;
+  background: #1abc9c;
+  color: white;
+  background-image: url(https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20200724135829/iStock-95729439.jpg);
+  background-size: 100%;
+  background-blend-mode: center;
+  font-family: Righteous;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+.alert {
+  padding: 5px;
+  background-color: #f59542;
+  color: white;
+  font-family: Open Sans;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+.container {
+  position: relative;
+  /*width: 50%;
+  max-width: 300px;*/
+}
+
+.image {
+  display: block;
+  /*width: 100%;
+  height: auto;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 77%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.container:hover .overlay {
+  opacity: 1; 
+}
+
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  color: orange;
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!--<h1>ULTISMART</h1>
+    <h2>INFOTECH</h2>
+  <h3>MYSORE</h3>
+  <h4>TOURISM</h4>
+  <h5>MYSORE PALACE</h5>-->
+  <h1 style="font-size: 90px;">MANGALURU</h1>
+  <p style="font-size: 45px;"><b>The Port City</b></p>
+  
+  <!--<p>A <b>responsive</b> web app created by NIE & VVCE ISE.</p>-->
+</div>
+
+<!--<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Link</a>
+</div>-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="feedback1.html">Feedback</a></li>
+      <li><a href="mapsmang.html">Map</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="sign_in.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login1.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <h3>Alert<strong> COVID-19: MANGALURU</strong> is in orange zone</h3>
+  <div><h6>Last update: <strong>1st November 2020</strong></h6></div>   
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Must Places to Visit:</h2><br>
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>01.  </b>Panambur Beach</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--k6JdnNM7--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/758/original/1553498696_2.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Panambur Beach is one of the safest and best maintaines beach of India.</li>
+              <li>It is situated 10km Noth of Mangalore City Center.</li>
+              <li>Important Events: Beach Festival, Kite Festival</li>
+              <li>Other attractions include jet ski rides, boating, dolphin viewing, food stalls and is also known for its highly skilled and trained lifeguards who patrol the beach to ensure visitor safety.</li>
+              <li>This beach has been popular for its sunsets, the port area and a picnic spot for tourists and locals alike and offers views of the sunset. The beach attracts visitors due to its close proximity to the city.</li>
+              <li>Timings to visit Panambur Beach is from 8am to 7pm.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>02.  </b>Manglore Beach</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--cntVHGW_--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/760/original/1553498975_4.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Timings: It is open 24/7.</li>
+              <li>Entry Charges: You don’t have to pay any entry charges.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>03.  </b>Ullal Beach</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--6X_2R_n3--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/759/original/1553498853_3.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>location: 10km south from the city of Manglore.</li>
+              <li>Attractions are its picturesque stretch of Coconut trees, fishermen's lane, the ruined fort of Abbakka Devi and 16th century Jain temples. A resort is also situated nearby.</li>
+              <li>Timings: You can visit Ullal Beach anytime, but evening hours would be the best.</li>
+              <li>Entry Charges: There are no entry charges.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>04.  </b>New manglore Port</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--JnFuZ4J---/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/767/original/1553500730_12.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Timings: Open always.</li>
+              <li>We can see many of the import and export operations in the port, which includes granite, iron ore, cashew, coffee, and spices. You must list the port in your itinerary.</li>
+              <li>Entry Charges: You have to pay an entry fee of Rs. 200/- per person.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>05.  </b>Tannirbhavi Beach</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--uc1Qcqvk--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/769/original/1553500978_13.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>This is the perfect place for the peace and nature lover.</li>
+              <li>Tannirbhavi is the quietest and offbeat location that people generally fail to visit. The place has all remained desolate and has always been kept apart from other places, just because of the isolated region.</li>
+              <li>The beach offers you an unruffled state, just enjoying the sunset in the evening. The only route to visit the beach is by road; it is quite close to Gurupura River or from the Sultan Battery.</li>
+              <li>Timings: Monday to Sunday, from 6 am to 10 pm.</li>
+              <li>Entry Charges: The entry is absolutely free.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>06.  </b>Sasihithu Beach</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--UqJ8gJuX--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/770/original/1553501129_14.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>You have an excellent opportunity to be in a serene mode spending a whole day in the Sasihithlu beach. Sasihithlu is the most visited location in the state.</li>
+              <li> So, you can dedicate a day of your trip just to visit the beaches in the city. The sunset is a view that we can even die for.</li>
+              <li>Timings: You can visit the beach between 8 am and 7.30pm.</li>
+              <li>Entry Charges: Free of cost entry.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>07.  </b>Kudroli Gokarnath Temple</h1></div>  
+        <div class="container">
+          <img src="https://www.pearlsindiatour.com/images/rajasthan/kudroli-gokarnath-temple.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>Deity: Gokarnanatha</li>
+              <li>The temple is 2 km from the centre of Mangalore city. </li>
+              <li>Timings: To visit the temple you have to schedule your visiting hours between 6 am and 7 pm.</li>
+              <li>Entry Charges: There are no entry charges.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>08.  </b>Kadri Manjunath Temple</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--UaZCmZu6--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/772/original/1553501434_16.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The architecture is solely a blend of both Indian and Buddhist culture.</li>
+              <li>Timings: Monday to Sunday, between 6 am to 1 pm and 4 pm to 8 pm.</li>
+              <li>Entry Charges: No entry fee.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br>  
+
+
+      <div>
+       <div class="name" style="background: white;margin-left: : 5px; padding: 1px; border-left: 5px solid #264653; color: #264653; width:82%;"><h1><b>09.  </b>Light-House Hill Garden</h1></div>  
+        <div class="container">
+          <img src="https://images.thrillophilia.com/image/upload/s--WRlkaJVR--/c_fill,dpr_1.0,g_auto,h_450,w_753/v1/attractions/images/000/003/775/original/1553502046_19.jpg.jpg" width="900" height="500">
+            <div class="overlay">
+              <ul>
+              <li>The garden is situated in the center of the Mangalore city drawing the attention of plenty of visitors and tourists from around the corners of the globe.</li>
+              <li> You can enjoy the sea view from the top of the light-house, which makes it more beautiful during the sunset.</li>
+              <li>The cool breeze, the sounds of soft waves, the chirping of birds and people all around gives a great calmness to mind, body, and soul.</li>
+              <li>Timings: You can visit the garden from 9 am to 12 pm & 4 pm to 9 pm.</li>
+              <li>Entry Charges: There is no entry fee.</li>
+              </ul>
+            </div>
+        </div>
+      </div><br><br> 
+  </div>
+    
+    <!--<h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>The top sightseeing places in Mysore are Mysore Palace, Brindavan Gardens, Somanathapura Temple, Mysore Zoo, Chamundeshwari Temple, Shuka Vana...</p>
+    <h3>More Text</h3>
+    <p>The top activities in Mysore are Enjoy Panaromic View of Mysore with Joyride, A 3-hour Open Jeep Safari in Mysore, Discover All City Highlights: Mysore Sightseeing Tour, A Full-day Open Jeep Tour in Coorg, Jet Skiing near Mysore, Bandipur National Park Open Jeep Safari from Mysore..</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>-->
+ 
+  <div class="main">
+    <!--<h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 17, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Then visit Chumundi Hills Bull Statue, Sri Chamundeshwari Temple and Zoological Gardens and Srirangapatna.</p>
+    <p>The cultural ambience and achievements of Mysore earned it the sobriquet Cultural Capital of Karnataka. Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that take place during the Dasara festival when the city receives many tourists from around the world.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Oct 7, 2020</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p> October to February: This is one of the best times of the year to visit Mysore because the weather is cool with temperature dipping to a minimum of 10°C. March to May: Summers in Mysore are warm with the temperature varying between 22°C and 39°C..</p>-->
+    <h3>Manglore Top Experiences</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--nTvB8Mx0--/c_fill,f_auto,fl_strip_profile,g_auto,h_600,q_auto,w_975/v1/images/photos/000/157/312/original/1560000919_IMG_5010.jpg.jpg?1560000919" alt="mountain" style="width:100%">
+          <h2>Camping and activities in the Backwaters of Arabian Sea</h2>
+          <p class="price">Rs 800 Onwards</p>
+          <p style="font-family: Open Sans"><b>|2 Days 1 Night|</b></p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="https://www.mounty.co/camps/arabian-sea-view-camping-in-mangaluru">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--mDu4lSaw--/c_fill,f_auto,fl_strip_profile,g_auto,h_600,q_auto,w_975/v1/images/photos/000/157/187/original/1559915483_576464_568240043194777_934135447_n.jpg.png.jpg?1559915483" alt="Rafting" style="width:100%">
+          <h1>Stand Up Paddle (sup) in Manglore</h1><br>
+          <p class="price">Rs 900 Onwards</p>
+          <p style="font-family: Open Sans"><b>|1 Hour 30 Minutes|</b></p><br>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://www.thrillophilia.com/cities/mangalore/tags/water-sports?partner=holidify">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--AIv6DgG---/c_fill,f_auto,fl_strip_profile,g_auto,h_600,q_auto,w_975/v1/images/photos/000/159/534/original/1561114425_shutterstock_1079198936.jpg.jpg?1561114425" alt="camp" style="width:100%">
+          <h1>Hilltop Camping With Activities in Sakleshpur</h1>
+          <p class="price">Rs 2,475 Onwards</p>
+          <p style="font-family: Open Sans;"><b>|2 Days 1 Night|</b></p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="https://www.treksandtrails.org/tours/sakleshpur-camping">Book Now</a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--qko0VJxC--/c_fill,f_auto,fl_strip_profile,g_auto,h_600,q_auto,w_975/v1/images/photos/000/157/147/original/1559911188_1559547523_shutterstock_1198759210.jpg.png.jpg?1559911188" alt="Tea" style="width:100%">
+          <h1>Fun - Filled  Kayaking  in  Manglore</h1>
+          <p class="price">Rs 500 onwards</p>
+          <p style="font-family: Open Sans;"><b>|1 Hour 30 Minutes|
+          </b></p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="https://surfingindia.net/guided-kayaking-tours/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+    <h3>Luxury Deals and Homestays</h3>
+    <div class="col-container">
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--U10hzhgR--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_150,q_auto,w_243/v1/images/photos/000/149/771/original/1553774886_1553768370_2b37058edacf11e5adbc36cfdd80c293.jpg.jpg.jpg" alt="resort" style="width:100%">
+          <h2>RiverRoost Resorts | Book Now</h2>
+          <p class="price">Rs 4600 Onwards</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><a href="https://www.thrillophilia.com/tours/a-thrilling-escape-into-the-scenic-beauty-of-coorg"><button><a href="https://riverroostresorts.com/reservations/book-now.html">Book Now</a></button></a></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--BeusNpOU--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/149/751/original/1553770768_1553764779_142009051.jpg.jpg.jpg" alt="resort" style="width:100%">
+          <h2>Summer Sands Beach Resort</h2>
+          <p class="price">Rs 5,800 Onwards</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <p><button><a href="https://summersands.resavenue.com/bookingNew/bookingWizard.book?_target9&locale=en&reqtoken=C9GZKFJVNO">Book Now</a></button></p>
+        </div>  
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--5ikvSRWd--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/150/286/original/1591454038_Capture.JPG.jpg" alt="homestays" style="width:100%">
+          <h2>Red Rock Residency Resort</h2>
+          <p class="price">Rs 2,100 Onwards</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <p><button><a href="http://www.redrockresidency.com/">Book Now</a></button></p>
+        </div>  
+      </div>
+
+
+      <div class="col">
+        <div class="card">
+          <img src="https://images.thrillophilia.com/image/upload/s--fEKmjarS--/c_fill,dpr_1.0,f_auto,fl_strip_profile,g_center,h_450,q_auto,w_753/v1/images/photos/000/149/750/original/1553770573_1553761362_143887498.jpg.jpg.jpg" alt="homestays" style="width:100%">
+          <h2>Manglore Beach Resort</h2>
+          <p class="price">Rs 2,030 Onwards</p>
+          <h5 style="font-family: Open Sans;"><b>Rating</b></h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+          <p><button><a href="https://mangalorebeachresort.business.site/">Book Now</a></button></p>  
+        </div>  
+      </div>  
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<!--<div class="tourism">
+  <h2>Tourism</h2>
+</div>-->
+
+</body>
+</html>
